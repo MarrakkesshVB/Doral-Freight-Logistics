@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doral Freight Logistics</title>
+    <meta name="description" content="26 years of logistics excellence. Ocean Freight, NVOCC, and specialized Caribbean delivery." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#05070A] min-h-screen text-white font-sans selection:bg-[#0066FF] selection:text-white relative overflow-x-hidden">
+    <!-- Background accents -->
+    <div class="accent-glow top-[-200px] left-[-100px]"></div>
+    <div class="accent-glow top-[40%] right-[-100px]"></div>
+    <div class="accent-glow bottom-[-200px] left-[20%]"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor-dot" class="hidden md:block fixed top-0 left-0 w-4 h-4 bg-[#0066FF] rounded-full pointer-events-none z-[9999] mix-blend-difference opacity-0 transition-opacity"></div>
+    <div id="custom-cursor-outline" class="hidden md:block fixed top-0 left-0 w-12 h-12 border-2 border-[#0066FF] rounded-full pointer-events-none z-[9998] opacity-0 transition-all duration-300 ease-out"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+        <div id="hero-bg" class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#05070A] z-10"></div>
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c663be?q=80&w=2070" alt="Cargo Ship Logistics" class="w-full h-full object-cover opacity-80" />
+        </div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-10 pointer-events-none"></div>
+        
+        <div id="hero-content" class="relative z-20 container mx-auto px-6 text-center reveal-element">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-blue-300 text-sm font-medium mb-6 uppercase tracking-wider">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+                <span>Excellence since 1999</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+                Connecting the <br class="hidden md:block" />
+                <span class="text-gradient">Caribbean to the World</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">
+                Next-generation logistics from Miami to Puerto Rico, Santo Domingo, and Santiago. Seamless, transparent, and powerful.
+            </p>
+            <div>
+                <a href="#quote" class="interactive-element inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-[#0066FF] hover:bg-[#0052CC] transition-colors duration-300 rounded-full shadow-[0_0_40px_rgba(0,102,255,0.4)] hover:shadow-[0_0_60px_rgba(0,102,255,0.6)] group cursor-none">
+                    Get a Smart Quote
+                    <span class="ml-2 inline-block group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-gray-400 reveal-element delay-300">
+            <span class="text-xs uppercase tracking-[0.2em] mb-2 font-medium">Scroll</span>
+            <div class="animate-bounce">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-transparent relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mb-20 reveal-element">
+                <div class="text-[#0066FF] font-semibold uppercase tracking-wider mb-4">Core Capabilities</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white">End-to-end logistics engineered for scale.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=800" alt="NVOCC Licensed" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="anchor" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">NVOCC Licensed</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">Fully licensed Non-Vessel Operating Common Carrier ensuring secure and compliant ocean freight operations across global routes.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-100 cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=800" alt="Ocean Freight" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="ship" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Ocean Freight</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">Reliable FCL and LCL ocean freight solutions from Miami to our specialized hubs in Puerto Rico and Dominican Republic.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-200 cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800" alt="LTL & FTL" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="truck" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">LTL & FTL</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">Flexible ground transportation. Less-than-truckload or full-truckload options optimized for speed and cost-efficiency.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1586528116493-a0282b5063c3?q=80&w=800" alt="Warehousing" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="warehouse" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Warehousing</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">State-of-the-art consolidation and deconsolidation facilities designed to handle diverse cargo types with absolute security.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-100 cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?q=80&w=800" alt="Pickup & Delivery" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="package" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Pickup & Delivery</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">Specialized door-to-door logistics in Caribbean routes, ensuring your cargo reaches its final destination seamlessly.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-200 cursor-none transition-transform duration-300 hover:-translate-y-2">
+                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800" alt="Customs Brokerage" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                    </div>
+                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
+                        <i data-lucide="file-check" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Customs Brokerage</h3>
+                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                            <p class="text-white/70 mb-6 font-light leading-relaxed">Expert clearance services to navigate complex regulations and prevent delays at ports of entry.</p>
+                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                                Explore Solution 
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="map" class="py-32 relative overflow-hidden z-10">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0066FF]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/3 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Strategic<br />Caribbean Network.</h2>
+                    <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                        Our optimized routing matrix connects our Miami Headquarters directly to our specialized facilities across Puerto Rico and the Dominican Republic, ensuring unprecedented transit speeds.
+                    </p>
+                    <div class="space-y-4" id="map-locations">
+                        <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="mia">
+                            <div class="flex items-center gap-3">
+                                <div class="loc-dot w-2 h-2 rounded-full bg-white transition-shadow duration-300"></div>
+                                <span class="font-medium text-white">Miami (HQ)</span>
+                            </div>
+                        </div>
+                        <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sju">
+                            <div class="flex items-center gap-3">
+                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <span class="font-medium text-white">San Juan, PR</span>
+                            </div>
+                        </div>
+                        <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sdq">
+                            <div class="flex items-center gap-3">
+                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <span class="font-medium text-white">Santo Domingo, DR</span>
+                            </div>
+                        </div>
+                        <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sti">
+                            <div class="flex items-center gap-3">
+                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <span class="font-medium text-white">Santiago, DR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/3 h-[500px] relative glass p-8 flex items-center justify-center reveal-element delay-200 border-[rgba(0,102,255,0.2)]">
+                    <div class="relative w-full max-w-[600px] aspect-video map-svg-container">
+                        <!-- SVG Map Lines -->
+                        <svg id="network-lines" class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <!-- Base Routes -->
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sju" data-target="sju" d="M 30 20 Q 50 55 80 65" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sdq" data-target="sdq" d="M 30 20 Q 50 50 60 60" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sti" data-target="sti" d="M 30 20 Q 50 40 55 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            
+                            <!-- Traveling Dots (Hidden by default, shown via JS) -->
+                            <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sju" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
+                                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 30 20 Q 50 55 80 65" />
+                            </circle>
+                            <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sdq" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
+                                <animateMotion dur="2s" repeatCount="indefinite" path="M 30 20 Q 50 50 60 60" />
+                            </circle>
+                            <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sti" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
+                                <animateMotion dur="1.8s" repeatCount="indefinite" path="M 30 20 Q 50 40 55 50" />
+                            </circle>
+                        </svg>
+                        
+                        <!-- Nodes -->
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 30%; top: 20%;" data-node="mia">
+                            <div class="relative interactive-element cursor-none">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-white opacity-0 animate-ping"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white] border-2 border-[#05070A] z-10 transition-transform"></div>
+                            </div>
+                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Miami (HQ)</div>
+                        </div>
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 80%; top: 65%; transition-delay: 100ms;" data-node="sju">
+                            <div class="relative interactive-element cursor-none">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                            </div>
+                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">San Juan, PR</div>
+                        </div>
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 60%; top: 60%; transition-delay: 200ms;" data-node="sdq">
+                            <div class="relative interactive-element cursor-none">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                            </div>
+                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santo Domingo, DR</div>
+                        </div>
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 55%; top: 50%; transition-delay: 300ms;" data-node="sti">
+                            <div class="relative interactive-element cursor-none">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                            </div>
+                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santiago, DR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Calculator Section -->
+    <section id="quote" class="py-24 bg-transparent relative overflow-hidden z-10">
+        <div class="absolute top-0 right-0 w-[50vw] h-full bg-[#0066FF]/5 skew-x-[-10deg] translate-x-32"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-element">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Smart Freight Estimator</h2>
+                <p class="text-white/60 text-lg font-light">Get real-time insights on your logistics costs with our intelligent pricing engine.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto glass overflow-hidden flex flex-col md:flex-row border-[rgba(0,102,255,0.2)] reveal-element">
+                
+                <!-- Left Side - Form -->
+                <div class="w-full md:w-3/5 p-8 md:p-12 relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold text-white">Cargo Details</h3>
+                        <div class="flex gap-2" id="form-steps-indicator">
+                            <div class="step-dot w-3 h-3 rounded-full bg-[#0066FF] transition-colors"></div>
+                            <div class="step-dot w-3 h-3 rounded-full glass transition-colors"></div>
+                        </div>
+                    </div>
+
+                    <!-- Web3Forms Integration -->
+                    <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="relative min-h-[360px]">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="hidden" name="Estimated Cost" id="hidden-est-cost" value="">
+
+                        <!-- Step 1 -->
+                        <div id="step-1" class="absolute w-full transition-all duration-500 opacity-100 translate-x-0 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Origin</label>
+                                    <select disabled class="input-field appearance-none cursor-none opacity-50" name="Origin">
+                                        <option>Miami, FL (HQ)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Destination</label>
+                                    <select required id="calc-dest" name="Destination" class="interactive-element input-field cursor-none">
+                                        <option value="" disabled selected>Select route...</option>
+                                        <option value="PR">San Juan, Puerto Rico</option>
+                                        <option value="SDQ">Santo Domingo, DR</option>
+                                        <option value="STI">Santiago, DR</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Freight Type</label>
+                                <div class="grid grid-cols-3 gap-4" id="freight-type-selector">
+                                    <input type="hidden" name="Freight Type" id="calc-type-input" value="LTL">
+                                    <button type="button" data-type="LTL" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none border-[#0066FF] bg-[#0066FF]/20 text-[#0066FF]">LTL</button>
+                                    <button type="button" data-type="FTL" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none glass text-white/70 hover:border-white/20">FTL</button>
+                                    <button type="button" data-type="Air" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none glass text-white/70 hover:border-white/20">Air</button>
+                                </div>
+                            </div>
+                            <button type="button" id="btn-next-step" class="interactive-element w-full bg-white text-black font-bold text-xs py-4 rounded-xl hover:bg-blue-50 transition-colors mt-8 cursor-none">
+                                Continue to Dimensions
+                            </button>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div id="step-2" class="absolute w-full transition-all duration-500 opacity-0 translate-x-10 pointer-events-none space-y-6">
+                            <div>
+                                <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Total Weight (lbs)</label>
+                                <input type="number" id="calc-weight" name="Weight (lbs)" required class="interactive-element input-field cursor-none" placeholder="e.g. 500">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Dimensions (inches)</label>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <input type="number" id="calc-l" name="Length" required placeholder="L" class="interactive-element input-field cursor-none text-center">
+                                    <input type="number" id="calc-w" name="Width" required placeholder="W" class="interactive-element input-field cursor-none text-center">
+                                    <input type="number" id="calc-h" name="Height" required placeholder="H" class="interactive-element input-field cursor-none text-center">
+                                </div>
+                            </div>
+                            <div class="flex gap-4 pt-4">
+                                <button type="button" id="btn-prev-step" class="interactive-element px-6 py-4 rounded-xl glass text-white/70 font-medium hover:bg-white/5 transition-colors cursor-none">Back</button>
+                                <button type="submit" id="btn-submit-calc" class="interactive-element flex-1 bg-white text-black font-bold text-xs py-4 rounded-xl hover:bg-blue-50 transition-colors flex items-center justify-center cursor-none disabled:opacity-70">
+                                    <span id="btn-submit-text">Calculate Estimate</span>
+                                    <i data-lucide="loader-2" id="btn-submit-spinner" class="hidden w-5 h-5 animate-spin"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 (Success) -->
+                        <div id="step-3" class="absolute w-full h-full transition-all duration-500 opacity-0 scale-95 pointer-events-none flex flex-col items-center justify-center text-center py-10 z-10 bg-[#05070A]/80 backdrop-blur">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="check-circle-2" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Quote Generated</h3>
+                            <p class="text-white/60 mb-8">One of our logistics specialists will contact you shortly to finalize the details.</p>
+                            <button type="button" id="btn-reset-form" class="interactive-element text-[#0066FF] font-medium hover:underline cursor-none">Start New Quote</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Side - Live Results -->
+                <div class="w-full md:w-2/5 glass !rounded-none !border-0 !border-l border-[rgba(0,102,255,0.2)] p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#0066FF]/20 blur-[80px] rounded-full pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-8 text-gray-400">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            <span class="font-medium tracking-wide uppercase text-sm">Live Estimate</span>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-[10px] uppercase opacity-40 font-bold block mb-2">Estimated Cost</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white">$</span>
+                                <span id="live-cost" class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">0</span>
+                                <span class="text-gray-500 font-medium ml-2">USD</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4 border-t border-white/10 pt-8">
+                            <div class="flex justify-between items-center text-[10px] uppercase font-bold">
+                                <span class="opacity-40">Route</span>
+                                <span class="text-white" id="display-route">---</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] uppercase font-bold">
+                                <span class="opacity-40">Service</span>
+                                <span class="text-white" id="display-service">LTL</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] uppercase font-bold">
+                                <span class="opacity-40">Transit Time</span>
+                                <span class="font-medium text-[#0066FF]" id="display-time">---</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-[#0066FF]/10 rounded-lg border border-[#0066FF]/20">
+                            <p class="text-[11px] leading-snug opacity-80">
+                                <span class="font-bold text-[#0066FF] uppercase">Notice:</span> Rates fluctuate based on fuel surcharges. Official quote provided within 2 business hours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="py-32 bg-transparent relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24 reveal-element">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">26 Years of Motion.</h2>
+                <p class="text-white/60 text-lg max-w-2xl mx-auto font-light">A legacy of reliability, expanding reach, and continuous innovation.</p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto" id="timeline-container">
+                <!-- Central Line -->
+                <div class="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2"></div>
+                <!-- Animated fill line -->
+                <div id="timeline-line-fill" class="absolute left-[28px] md:left-1/2 top-0 w-[2px] bg-[#0066FF] -translate-x-1/2 origin-top" style="transform: scaleY(0);"></div>
+
+                <div class="space-y-16 md:space-y-24 relative z-10">
+                    <!-- Items -->
+                    <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center reveal-element">
+                        <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
+                            <div class="text-[#0066FF] font-bold text-xl mb-2">1999</div>
+                            <h4 class="text-2xl font-bold text-white mb-3">Foundation</h4>
+                            <p class="text-white/60 font-light leading-relaxed">Established in Miami, FL to bridge the logistics gap to the Caribbean.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center md:flex-row-reverse reveal-element delay-100">
+                        <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pl-16 text-left">
+                            <div class="text-[#0066FF] font-bold text-xl mb-2">2005</div>
+                            <h4 class="text-2xl font-bold text-white mb-3">NVOCC Licensed</h4>
+                            <p class="text-white/60 font-light leading-relaxed">Obtained official NVOCC licensing, expanding our ocean freight capabilities globally.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center reveal-element delay-100">
+                        <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
+                            <div class="text-[#0066FF] font-bold text-xl mb-2">2012</div>
+                            <h4 class="text-2xl font-bold text-white mb-3">Puerto Rico Hub</h4>
+                            <p class="text-white/60 font-light leading-relaxed">Opened our dedicated consolidation facility in San Juan.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center md:flex-row-reverse reveal-element delay-100">
+                        <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pl-16 text-left">
+                            <div class="text-[#0066FF] font-bold text-xl mb-2">2018</div>
+                            <h4 class="text-2xl font-bold text-white mb-3">DR Expansion</h4>
+                            <p class="text-white/60 font-light leading-relaxed">Launched dual operations in Santo Domingo and Santiago.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center reveal-element delay-100">
+                        <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
+                        <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
+                            <div class="text-[#0066FF] font-bold text-xl mb-2">2024</div>
+                            <h4 class="text-2xl font-bold text-white mb-3">Tech Integration</h4>
+                            <p class="text-white/60 font-light leading-relaxed">Implemented next-gen tracking and automated warehouse management systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#05070A] pt-24 pb-12 border-t border-white/10 text-white relative z-10 reveal-element">
+        <div class="container mx-auto px-6">
+            <!-- Top CTA -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to move?</h2>
+                    <p class="text-gray-400 text-lg font-light">Partner with the most reliable logistics network in the Caribbean. Get your cargo moving today.</p>
+                </div>
+                <button class="interactive-element flex items-center gap-3 px-8 py-4 glass text-white font-semibold rounded-full hover:bg-[#0066FF]/20 border-[rgba(0,102,255,0.4)] transition-all group cursor-none">
+                    Contact Sales
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+            <!-- Locations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <h4 class="text-xl font-bold mb-1">Miami</h4>
+                    <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">Global Headquarters</p>
+                    <ul class="space-y-4 text-gray-400 font-light">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
+                            <span class="whitespace-pre-line">8200 NW 33rd St, Suite 100<br>Miami, FL 33122</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
+                            <span>+1 (305) 593-1120</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-1">San Juan</h4>
+                    <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">PR Consolidation Hub</p>
+                    <ul class="space-y-4 text-gray-400 font-light">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
+                            <span class="whitespace-pre-line">Zona Industrial Luchetti<br>Bayamón, PR 00961</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
+                            <span>+1 (787) 795-0000</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-1">Santo Domingo</h4>
+                    <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">DR Operations</p>
+                    <ul class="space-y-4 text-gray-400 font-light">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
+                            <span class="whitespace-pre-line">Av. Luperón, Zona Industrial<br>Santo Domingo, DR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
+                            <span>+1 (809) 532-1111</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-1">Santiago</h4>
+                    <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">Northern DR Hub</p>
+                    <ul class="space-y-4 text-gray-400 font-light">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
+                            <span class="whitespace-pre-line">Autopista Duarte Km 5<br>Santiago, DR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
+                            <span>+1 (809) 247-2222</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-light">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span>Systems Operational</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Privacy Policy</a>
+                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Terms of Service</a>
+                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Licensing</a>
+                </div>
+                <p class="mt-4 md:mt-0">© 2024 Doral Freight Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact -->
+    <div id="floating-contact-container" class="fixed bottom-6 right-6 z-[90] transition-all duration-500 translate-y-20 opacity-0 pointer-events-none">
+        <div id="floating-chat-box" class="absolute bottom-20 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 opacity-0 translate-y-4 pointer-events-none scale-95 origin-bottom-right">
+            <div class="bg-[#25D366] p-4 text-white">
+                <h4 class="font-bold">Chat with Support</h4>
+                <p class="text-sm text-green-100 font-light">Typically replies in minutes</p>
+            </div>
+            <div class="p-6 bg-gray-50 flex flex-col gap-3">
+                <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm text-sm text-gray-700 border border-gray-100 w-[85%]">
+                    Hello! How can we help you with your freight today?
+                </div>
+                <a href="https://wa.me/13055931120" target="_blank" rel="noopener noreferrer" class="interactive-element mt-4 flex items-center justify-center gap-2 bg-[#25D366] text-white font-medium py-3 rounded-xl hover:bg-[#20b858] transition-colors shadow-lg shadow-green-500/30 cursor-none">
+                    Open WhatsApp
+                </a>
+            </div>
+        </div>
+        <button id="floating-toggle-btn" class="interactive-element w-16 h-16 bg-[#05070A] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform border border-white/10 cursor-none">
+            <i data-lucide="message-circle" id="floating-icon-chat" class="w-7 h-7 absolute transition-opacity duration-300 opacity-100"></i>
+            <i data-lucide="x" id="floating-icon-close" class="w-7 h-7 absolute transition-opacity duration-300 opacity-0"></i>
+        </button>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
