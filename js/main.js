@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calculate progress when container is in view
             if (rect.top < viewHeight && rect.bottom > 0) {
                 const totalScroll = rect.height;
-                const currentScroll = viewHeight / 2 - rect.top;
+                const currentScroll = viewHeight * 0.85 - rect.top;
                 let progress = currentScroll / totalScroll;
                 
                 progress = Math.max(0, Math.min(1, progress));
