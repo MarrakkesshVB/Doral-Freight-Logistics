@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doral Freight Logistics</title>
+    <link rel="icon" type="image/webp" href="assets/logo.webp" />
     <meta name="description" content="26 years of logistics excellence. Ocean Freight, NVOCC, and specialized Caribbean delivery." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +18,36 @@
     <!-- Background accents -->
     <div class="accent-glow top-[-200px] left-[-100px]"></div>
     <div class="accent-glow top-[40%] right-[-100px]"></div>
-    <div class="accent-glow bottom-[-200px] left-[20%]"></div>
+    <div class="accent-glow bottom-0 left-[20%]"></div>
 
     <!-- Custom Cursor -->
     <div id="custom-cursor-dot" class="hidden md:block fixed top-0 left-0 w-4 h-4 bg-[#0066FF] rounded-full pointer-events-none z-[9999] mix-blend-difference opacity-0 transition-opacity"></div>
     <div id="custom-cursor-outline" class="hidden md:block fixed top-0 left-0 w-12 h-12 border-2 border-[#0066FF] rounded-full pointer-events-none z-[9998] opacity-0 transition-all duration-300 ease-out"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[80] border-b border-white/5 bg-[#05070A]/70 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="interactive-element flex items-center gap-3 cursor-none">
+                <div class="h-10 rounded-lg bg-white overflow-hidden flex items-center justify-center shadow-lg shadow-black/30">
+                    <img src="assets/logo.webp" alt="Doral Freight Logistics logo" class="h-14 w-auto object-contain" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-white tracking-wide leading-none">DORAL FREIGHT</span>
+                    <span class="text-[8px] tracking-[0.4em] text-[#0066FF] uppercase">Logistics Inc.</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#services" class="interactive-element hover:text-white transition-colors cursor-none">Services</a>
+                <a href="#map" class="interactive-element hover:text-white transition-colors cursor-none">Network</a>
+                <a href="#quote" class="interactive-element hover:text-white transition-colors cursor-none">Estimate</a>
+                <a href="#timeline" class="interactive-element hover:text-white transition-colors cursor-none">About</a>
+            </div>
+            <a href="tel:+13054771022" class="interactive-element hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                (305) 477-1022
+            </a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
@@ -81,10 +107,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">NVOCC Licensed</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">Fully licensed Non-Vessel Operating Common Carrier ensuring secure and compliant ocean freight operations across global routes.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -101,10 +127,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Ocean Freight</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">Reliable FCL and LCL ocean freight solutions from Miami to our specialized hubs in Puerto Rico and Dominican Republic.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -121,10 +147,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">LTL & FTL</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">Flexible ground transportation. Less-than-truckload or full-truckload options optimized for speed and cost-efficiency.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -141,10 +167,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Warehousing</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">State-of-the-art consolidation and deconsolidation facilities designed to handle diverse cargo types with absolute security.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -161,10 +187,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Pickup & Delivery</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">Specialized door-to-door logistics in Caribbean routes, ensuring your cargo reaches its final destination seamlessly.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -181,10 +207,10 @@
                         <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Customs Brokerage</h3>
                         <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                             <p class="text-white/70 mb-6 font-light leading-relaxed">Expert clearance services to navigate complex regulations and prevent delays at ports of entry.</p>
-                            <button class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none">
+                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
                                 Explore Solution 
                                 <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -538,10 +564,10 @@
                     <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to move?</h2>
                     <p class="text-gray-400 text-lg font-light">Partner with the most reliable logistics network in the Caribbean. Get your cargo moving today.</p>
                 </div>
-                <button class="interactive-element flex items-center gap-3 px-8 py-4 glass text-white font-semibold rounded-full hover:bg-[#0066FF]/20 border-[rgba(0,102,255,0.4)] transition-all group cursor-none">
+                <a href="#quote" class="interactive-element flex items-center gap-3 px-8 py-4 glass text-white font-semibold rounded-full hover:bg-[#0066FF]/20 border-[rgba(0,102,255,0.4)] transition-all group cursor-none">
                     Contact Sales
                     <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </button>
+                </a>
             </div>
 
             <!-- Locations Grid -->
@@ -552,11 +578,11 @@
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
-                            <span class="whitespace-pre-line">8200 NW 33rd St, Suite 100<br>Miami, FL 33122</span>
+                            <span class="whitespace-pre-line">11450 NW 34th Street, Suite 100<br>Doral, FL 33178</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
-                            <span>+1 (305) 593-1120</span>
+                            <span>+1 (305) 477-1022</span>
                         </li>
                     </ul>
                 </div>
@@ -566,11 +592,11 @@
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
-                            <span class="whitespace-pre-line">Zona Industrial Luchetti<br>Bayamón, PR 00961</span>
+                            <span class="whitespace-pre-line">Calle A, Lote 2, Amelia Ind. Park<br>Guaynabo, PR 00968</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
-                            <span>+1 (787) 795-0000</span>
+                            <span>+1 (787) 775-1512</span>
                         </li>
                     </ul>
                 </div>
@@ -580,11 +606,11 @@
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
-                            <span class="whitespace-pre-line">Av. Luperón, Zona Industrial<br>Santo Domingo, DR</span>
+                            <span class="whitespace-pre-line">Santo Domingo<br>República Dominicana</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
-                            <span>+1 (809) 532-1111</span>
+                            <span>+1 (809) 688-4243</span>
                         </li>
                     </ul>
                 </div>
@@ -594,11 +620,11 @@
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5 text-gray-500"></i>
-                            <span class="whitespace-pre-line">Autopista Duarte Km 5<br>Santiago, DR</span>
+                            <span class="whitespace-pre-line">Santiago<br>República Dominicana</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-5 h-5 shrink-0 text-gray-500"></i>
-                            <span>+1 (809) 247-2222</span>
+                            <span>+1 (809) 688-4243</span>
                         </li>
                     </ul>
                 </div>
@@ -610,12 +636,13 @@
                     <div class="w-2 h-2 rounded-full bg-green-500"></div>
                     <span>Systems Operational</span>
                 </div>
+                <a href="mailto:customerservice@doralfreight.com" class="interactive-element hover:text-white transition-colors cursor-none mb-4 md:mb-0">customerservice@doralfreight.com</a>
                 <div class="flex gap-6">
                     <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Privacy Policy</a>
                     <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Terms of Service</a>
                     <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Licensing</a>
                 </div>
-                <p class="mt-4 md:mt-0">© 2024 Doral Freight Logistics. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">© <span id="current-year">2026</span> Doral Freight Logistics. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -631,7 +658,7 @@
                 <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm text-sm text-gray-700 border border-gray-100 w-[85%]">
                     Hello! How can we help you with your freight today?
                 </div>
-                <a href="https://wa.me/13055931120" target="_blank" rel="noopener noreferrer" class="interactive-element mt-4 flex items-center justify-center gap-2 bg-[#25D366] text-white font-medium py-3 rounded-xl hover:bg-[#20b858] transition-colors shadow-lg shadow-green-500/30 cursor-none">
+                <a href="https://wa.me/13054771022" target="_blank" rel="noopener noreferrer" class="interactive-element mt-4 flex items-center justify-center gap-2 bg-[#25D366] text-white font-medium py-3 rounded-xl hover:bg-[#20b858] transition-colors shadow-lg shadow-green-500/30 cursor-none">
                     Open WhatsApp
                 </a>
             </div>
