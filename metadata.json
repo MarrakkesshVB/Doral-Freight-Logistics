@@ -1,6 +1,0 @@
-{
-  "name": "Doral Freight Logistics",
-  "description": "Premium cinematic web experience for Doral Freight Logistics, featuring interactive 3D elements, parallax scrolling, and real-time quoting.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

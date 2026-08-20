@@ -333,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        if (new FormData(form).get('botcheck')) return; // bot detectado → descarta silenciosamente
         const btnSubmitText = document.getElementById('btn-submit-text');
         const btnSubmitSpinner = document.getElementById('btn-submit-spinner');
         const submitBtn = document.getElementById('btn-submit-calc');

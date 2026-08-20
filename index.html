@@ -311,7 +311,9 @@
 
                     <!-- Web3Forms Integration -->
                     <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="relative min-h-[360px]">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="access_key" value="9608760f-9199-4683-9666-f17e51ff1734">
+                        <input type="hidden" name="subject" value="New Quote Request — Doral Freight Logistics">
+                        <input type="hidden" name="from_name" value="Doral Freight — Web">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <input type="hidden" name="Estimated Cost" id="hidden-est-cost" value="">
 
@@ -360,6 +362,24 @@
                                     <input type="number" id="calc-l" name="Length" required placeholder="L" class="interactive-element input-field cursor-none text-center">
                                     <input type="number" id="calc-w" name="Width" required placeholder="W" class="interactive-element input-field cursor-none text-center">
                                     <input type="number" id="calc-h" name="Height" required placeholder="H" class="interactive-element input-field cursor-none text-center">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">First Name</label>
+                                    <input type="text" name="First Name" required class="interactive-element input-field cursor-none" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Last Name</label>
+                                    <input type="text" name="Last Name" required class="interactive-element input-field cursor-none" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Phone / WhatsApp</label>
+                                    <input type="tel" name="Phone" required class="interactive-element input-field cursor-none" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Email</label>
+                                    <input type="email" name="Email" required class="interactive-element input-field cursor-none" />
                                 </div>
                             </div>
                             <div class="flex gap-4 pt-4">
