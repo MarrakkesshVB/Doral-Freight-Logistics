@@ -246,6 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const liveCostEl = document.getElementById('live-cost');
     const hiddenEstCost = document.getElementById('hidden-est-cost');
 
+    // --- Altura dinámica del form (evita recortes en steps absolutos) ---
+    form.style.transition = 'min-height 0.3s ease';
+    const syncFormHeight = (el) => { form.style.minHeight = el.scrollHeight + 'px'; };
+    syncFormHeight(step1);
+
+    // Offsets iniciales de animación vía transform (Tailwind v4 usa translate/scale,
+    // que el JS no puede pisar — por eso los manejamos acá)
+    step2.style.transform = 'translateX(40px)';
+    step3.style.transform = 'scale(0.95)';
+    window.addEventListener('resize', () => syncFormHeight(currentStep === 2 ? step2 : step1));
+
     const updateLiveEstimateText = () => {
         const dest = inputDest.value;
         const type = typeInput.value;
@@ -298,6 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dots[1].classList.remove('glass');
             dots[1].classList.add('bg-[#0066FF]');
             currentStep = 2;
+        syncFormHeight(step2);
         }, 300);
     });
 
@@ -313,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dots[1].classList.add('glass');
             dots[1].classList.remove('bg-[#0066FF]');
             currentStep = 1;
+        syncFormHeight(step1);
         }, 300);
     });
 
@@ -399,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dots[1].classList.add('glass');
             dots[1].classList.remove('bg-[#0066FF]');
             currentStep = 1;
+            syncFormHeight(step1);
         }, 300);
     });
 
