@@ -306,6 +306,7 @@
                         <div class="flex gap-2" id="form-steps-indicator">
                             <div class="step-dot w-3 h-3 rounded-full bg-[#0066FF] transition-colors"></div>
                             <div class="step-dot w-3 h-3 rounded-full glass transition-colors"></div>
+                            <div class="step-dot w-3 h-3 rounded-full glass transition-colors"></div>
                         </div>
                     </div>
 
@@ -384,15 +385,38 @@
                             </div>
                             <div class="flex gap-4 pt-4">
                                 <button type="button" id="btn-prev-step" class="interactive-element px-6 py-4 rounded-xl glass text-white/70 font-medium hover:bg-white/5 transition-colors cursor-none">Back</button>
-                                <button type="submit" id="btn-submit-calc" class="interactive-element flex-1 bg-white text-black font-bold text-xs py-4 rounded-xl hover:bg-blue-50 transition-colors flex items-center justify-center cursor-none disabled:opacity-70">
-                                    <span id="btn-submit-text">Calculate Estimate</span>
+                                <button type="button" id="btn-calc" class="interactive-element flex-1 bg-white text-black font-bold text-xs py-4 rounded-xl hover:bg-blue-50 transition-colors cursor-none">Calculate Estimate</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 (Review & Submit) -->
+                        <div id="step-3" class="absolute w-full transition-all duration-500 opacity-0 pointer-events-none space-y-6">
+                            <div class="text-center pt-2">
+                                <span class="text-[10px] uppercase opacity-40 font-bold block mb-2">Your Estimated Cost</span>
+                                <div class="flex items-baseline justify-center gap-1">
+                                    <span class="text-3xl font-bold text-white">$</span>
+                                    <span id="review-cost" class="text-5xl font-bold text-[#0066FF]">0</span>
+                                    <span class="text-gray-500 font-medium ml-2">USD</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between gap-6 border-b border-white/10 pb-2"><span class="opacity-40 uppercase text-[10px] font-bold">Route</span><span id="review-route" class="font-medium text-white">---</span></div>
+                                <div class="flex justify-between gap-6 border-b border-white/10 pb-2"><span class="opacity-40 uppercase text-[10px] font-bold">Service</span><span id="review-service" class="font-medium text-white">LTL</span></div>
+                                <div class="flex justify-between gap-6 border-b border-white/10 pb-2"><span class="opacity-40 uppercase text-[10px] font-bold">Chargeable Weight</span><span id="review-weight" class="font-medium text-white">---</span></div>
+                                <div class="flex justify-between gap-6"><span class="opacity-40 uppercase text-[10px] font-bold">Contact</span><span id="review-contact" class="font-medium text-white">---</span></div>
+                            </div>
+                            <p class="text-[11px] opacity-60 text-center leading-snug">Rates fluctuate based on fuel surcharges. Official quote provided within 2 business hours.</p>
+                            <div class="flex gap-4 pt-2">
+                                <button type="button" id="btn-back-to-2" class="interactive-element px-6 py-4 rounded-xl glass text-white/70 font-medium hover:bg-white/5 transition-colors cursor-none">Back</button>
+                                <button type="submit" id="btn-submit-lead" class="interactive-element flex-1 bg-white text-black font-bold text-xs py-4 rounded-xl hover:bg-blue-50 transition-colors flex items-center justify-center cursor-none disabled:opacity-70">
+                                    <span id="btn-submit-text">Submit Request</span>
                                     <i data-lucide="loader-2" id="btn-submit-spinner" class="hidden w-5 h-5 animate-spin"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 3 (Success) -->
-                        <div id="step-3" class="absolute w-full h-full transition-all duration-500 opacity-0 pointer-events-none flex flex-col items-center justify-center text-center py-10 z-10 bg-[#05070A]/80 backdrop-blur">
+                        <!-- Step 4 (Success) -->
+                        <div id="step-4" class="absolute w-full transition-all duration-500 opacity-0 pointer-events-none flex flex-col items-center justify-center text-center py-10 z-10 bg-[#05070A]/80 backdrop-blur">
                             <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                                 <i data-lucide="check-circle-2" class="w-8 h-8 text-green-600"></i>
                             </div>

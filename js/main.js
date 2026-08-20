@@ -225,17 +225,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Quote Calculator ---
+        // --- Quote Calculator ---
     let currentStep = 1;
     let estimatedCost = 0;
     let currentDisplayCost = 0;
-    
+
     const form = document.getElementById('quote-form');
     const step1 = document.getElementById('step-1');
     const step2 = document.getElementById('step-2');
     const step3 = document.getElementById('step-3');
+    const step4 = document.getElementById('step-4');
     const dots = document.querySelectorAll('.step-dot');
-    
+
     // Live Estimate Updates
     const inputDest = document.getElementById('calc-dest');
     const inputTypeBtns = document.querySelectorAll('.type-btn');
@@ -251,16 +252,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const syncFormHeight = (el) => { form.style.minHeight = el.scrollHeight + 'px'; };
     syncFormHeight(step1);
 
-    // Offsets iniciales de animación vía transform (Tailwind v4 usa translate/scale,
-    // que el JS no puede pisar — por eso los manejamos acá)
+    // Offsets iniciales de animación vía transform
     step2.style.transform = 'translateX(40px)';
-    step3.style.transform = 'scale(0.95)';
-    window.addEventListener('resize', () => syncFormHeight(currentStep === 2 ? step2 : step1));
+    step3.style.transform = 'translateX(40px)';
+    step4.style.transform = 'scale(0.95)';
+
+    const goToStep = (n) => {
+        currentStep = n;
+        const steps = [step1, step2, step3, step4];
+        steps.forEach((el, i) => {
+            const active = i === n - 1;
+            el.style.opacity = active ? '1' : '0';
+            el.style.pointerEvents = active ? 'auto' : 'none';
+            el.style.transform = active
+                ? (el === step4 ? 'scale(1)' : 'translateX(0)')
+                : (el === step4 ? 'scale(0.95)' : 'translateX(40px)');
+        });
+        dots.forEach((d, i) => {
+            d.classList.toggle('bg-[#0066FF]', i < n);
+            d.classList.toggle('glass', i >= n);
+        });
+        syncFormHeight(steps[n - 1]);
+    };
+
+    window.addEventListener('resize', () => syncFormHeight([step1, step2, step3, step4][currentStep - 1]));
 
     const updateLiveEstimateText = () => {
         const dest = inputDest.value;
         const type = typeInput.value;
-        
+
         if (dest) {
             displayRoute.textContent = `MIA → ${dest}`;
             displayTime.textContent = type === 'Air' ? '1-2 Days' : '4-7 Days';
@@ -289,6 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step Navigation
     const btnNext = document.getElementById('btn-next-step');
     const btnPrev = document.getElementById('btn-prev-step');
+    const btnBackTo2 = document.getElementById('btn-back-to-2');
+    const btnCalc = document.getElementById('btn-calc');
     const btnReset = document.getElementById('btn-reset-form');
 
     btnNext.addEventListener('click', () => {
@@ -297,44 +319,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         inputDest.classList.remove('border-red-500');
-        
-        step1.style.opacity = '0';
-        step1.style.transform = 'translateX(-20px)';
-        step1.style.pointerEvents = 'none';
-        
-        setTimeout(() => {
-            step2.style.opacity = '1';
-            step2.style.transform = 'translateX(0)';
-            step2.style.pointerEvents = 'auto';
-            dots[1].classList.remove('glass');
-            dots[1].classList.add('bg-[#0066FF]');
-            currentStep = 2;
-        syncFormHeight(step2);
-        }, 300);
+        goToStep(2);
     });
 
-    btnPrev.addEventListener('click', () => {
-        step2.style.opacity = '0';
-        step2.style.transform = 'translateX(20px)';
-        step2.style.pointerEvents = 'none';
-        
-        setTimeout(() => {
-            step1.style.opacity = '1';
-            step1.style.transform = 'translateX(0)';
-            step1.style.pointerEvents = 'auto';
-            dots[1].classList.add('glass');
-            dots[1].classList.remove('bg-[#0066FF]');
-            currentStep = 1;
-        syncFormHeight(step1);
-        }, 300);
-    });
+    btnPrev.addEventListener('click', () => goToStep(1));
+    btnBackTo2.addEventListener('click', () => goToStep(2));
 
     // Form Submission & Calculation
     const animateValue = (start, end, duration) => {
         let startTimestamp = null;
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const progress = Math.min(timestamp / duration, 1);
             currentDisplayCost = Math.floor(progress * (end - start) + start);
             liveCostEl.textContent = currentDisplayCost.toLocaleString();
             if (progress < 1) {
@@ -344,51 +340,59 @@ document.addEventListener('DOMContentLoaded', () => {
         window.requestAnimationFrame(step);
     };
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (new FormData(form).get('botcheck')) return; // bot detectado → descarta silenciosamente
-        const btnSubmitText = document.getElementById('btn-submit-text');
-        const btnSubmitSpinner = document.getElementById('btn-submit-spinner');
-        const submitBtn = document.getElementById('btn-submit-calc');
-        
-        // Dummy calculation logic matching React version
+    // Calcular (step 2 → step 3)
+    btnCalc.addEventListener('click', () => {
+        if (!form.reportValidity()) return;
         const weight = parseFloat(document.getElementById('calc-weight').value) || 0;
         const l = parseFloat(document.getElementById('calc-l').value) || 0;
         const w = parseFloat(document.getElementById('calc-w').value) || 0;
         const h = parseFloat(document.getElementById('calc-h').value) || 0;
-        
+
         const vol = (l * w * h) / 166;
         const chargeableWeight = Math.max(weight, vol);
         const baseRate = inputDest.value === 'PR' ? 1.5 : 2.1;
-        
+
         estimatedCost = Math.floor(chargeableWeight * baseRate) + 350;
         hiddenEstCost.value = estimatedCost;
 
-        // Simulate API call state
+        // Review (step 3)
+        document.getElementById('review-cost').textContent = estimatedCost.toLocaleString();
+        document.getElementById('review-route').textContent = `MIA → ${inputDest.value}`;
+        document.getElementById('review-service').textContent = typeInput.value;
+        document.getElementById('review-weight').textContent = `${Math.round(chargeableWeight).toLocaleString()} lbs`;
+        const firstName = (form.querySelector('[name="First Name"]').value || '').trim();
+        const lastName = (form.querySelector('[name="Last Name"]').value || '').trim();
+        document.getElementById('review-contact').textContent = `${firstName} ${lastName}` || '---';
+
+        animateValue(0, estimatedCost, 1200);
+        goToStep(3);
+    });
+
+    // Envío final (step 3 → Web3Forms → step 4)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (new FormData(form).get('botcheck')) return; // bot detectado → descarta
+        if (currentStep !== 3) return; // Enter en steps 1/2 no envía
+
+        const btnSubmitText = document.getElementById('btn-submit-text');
+        const btnSubmitSpinner = document.getElementById('btn-submit-spinner');
+        const submitBtn = document.getElementById('btn-submit-lead');
+
         submitBtn.disabled = true;
         btnSubmitText.classList.add('hidden');
         btnSubmitSpinner.classList.remove('hidden');
 
-        // Submit via fetch to Web3Forms
         const formData = new FormData(form);
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             body: formData
-        }).then(response => {
-            // Success step
-            step2.style.opacity = '0';
-            step2.style.pointerEvents = 'none';
-            setTimeout(() => {
-                step3.style.opacity = '1';
-                step3.style.transform = 'scale(1)';
-                step3.style.pointerEvents = 'auto';
-                animateValue(0, estimatedCost, 1500);
-                submitBtn.disabled = false;
-                btnSubmitText.classList.remove('hidden');
-                btnSubmitSpinner.classList.add('hidden');
-            }, 300);
+        }).then(() => {
+            goToStep(4);
+            submitBtn.disabled = false;
+            btnSubmitText.classList.remove('hidden');
+            btnSubmitSpinner.classList.add('hidden');
         }).catch(error => {
-            console.error('Error submitting form', error);
+            console.error('Error submitting quote', error);
             submitBtn.disabled = false;
             btnSubmitText.classList.remove('hidden');
             btnSubmitSpinner.classList.add('hidden');
@@ -397,23 +401,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnReset.addEventListener('click', () => {
-        step3.style.opacity = '0';
-        step3.style.transform = 'scale(0.95)';
-        step3.style.pointerEvents = 'none';
         form.reset();
         estimatedCost = 0;
         liveCostEl.textContent = "0";
         updateLiveEstimateText();
-        
-        setTimeout(() => {
-            step1.style.opacity = '1';
-            step1.style.transform = 'translateX(0)';
-            step1.style.pointerEvents = 'auto';
-            dots[1].classList.add('glass');
-            dots[1].classList.remove('bg-[#0066FF]');
-            currentStep = 1;
-            syncFormHeight(step1);
-        }, 300);
+        goToStep(1);
     });
 
     // --- Floating Contact ---
