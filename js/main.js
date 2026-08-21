@@ -1,8 +1,12 @@
 // js/main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Initialize Lucide Icons de forma segura
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        console.warn('Los iconos de Lucide no se pudieron cargar.');
+    }
 
     // Año dinámico en footer
     const yearEl = document.getElementById('current-year');

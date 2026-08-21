@@ -115,7 +115,15 @@
     transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce){.holo{transform:none!important}}
+
+/* ---------- hero globe: snippets de telemetría ---------- */
+.globe-snippet{position:absolute;z-index:6;pointer-events:none;white-space:pre;
+  font-family:ui-monospace,SFMono-Regular,monospace;font-size:10px;letter-spacing:.08em;
+  color:rgba(140,170,255,.45);opacity:0;animation:snippet 8s ease-in-out infinite;}
+@keyframes snippet{0%,100%{opacity:0;transform:translateY(6px)}30%,70%{opacity:1;transform:translateY(0)}}
+.globe-snippet--alert{color:rgba(255,110,160,.5)}
+@media(prefers-reduced-motion:reduce){.globe-snippet{display:none}}@media (prefers-reduced-motion: reduce) {
     *,
     ::before,
     ::after {

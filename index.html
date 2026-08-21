@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="js/tailwindcss.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/lucide.min.js"></script>
 </head>
 <body class="bg-[#05070A] min-h-screen text-white font-sans selection:bg-[#0066FF] selection:text-white relative overflow-x-hidden">
     <!-- Background accents -->
@@ -53,7 +53,11 @@
     <section id="hero" class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
         <div id="hero-bg" class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#05070A] z-10"></div>
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c663be?q=80&w=2070" alt="Cargo Ship Logistics" class="w-full h-full object-cover opacity-80" />
+            <canvas id="hero-globe" class="absolute inset-0 z-[5] w-full h-full"></canvas>
+            <div class="globe-snippet" style="top:24%; right:10%;">MIA → SDQ · LTL · 4-7 DAYS</div>
+            <div class="globe-snippet" style="top:52%; right:5%; animation-delay:2.5s;">NVOCC · FMC LICENSED</div>
+            <div class="globe-snippet" style="bottom:22%; left:8%; animation-delay:4.5s;">DFLU-2048 · MANIFEST SYNC [OK]</div>
+            <div class="globe-snippet globe-snippet--alert" style="top:14%; left:12%; animation-delay:6s;">DFLU-1188 · REROUTE · WIND HOLD</div>
         </div>
         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-10 pointer-events-none"></div>
         
@@ -87,6 +91,7 @@
 
     <!-- Services Section -->
     <section id="services" class="py-32 bg-transparent relative z-10">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mb-20 reveal-element">
                 <div class="text-[#0066FF] font-semibold uppercase tracking-wider mb-4">Core Capabilities</div>
@@ -220,6 +225,7 @@
 
     <!-- Interactive Map Section -->
     <section id="map" class="py-32 min-h-svh flex items-center relative overflow-hidden z-10">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0066FF]/10 rounded-full blur-[120px] pointer-events-none"></div>
         
         <div class="container mx-auto px-6 relative z-10">
@@ -315,7 +321,8 @@
 
     <!-- Quote Calculator Section -->
     <section id="quote" class="py-24 bg-transparent relative overflow-hidden z-10">
-        <div class="absolute top-0 right-0 w-[50vw] h-full bg-gradient-to-b from-transparent via-[#0066FF]/10 to-transparent skew-x-[-10deg] translate-x-32"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[50vw] h-full bg-gradient-to-b from-transparent via-[#0066FF]/10 to-transparent skew-x-[-10deg] translate-x-32 [mask-image:linear-gradient(to_left,black_20%,transparent_90%)]"></div>
         
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal-element">
@@ -496,6 +503,7 @@
 
     <!-- Timeline -->
     <section id="timeline" class="py-32 bg-transparent relative z-10">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
         <div class="container mx-auto px-6">
             <div class="text-center mb-24 reveal-element">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">26 Years of Motion.</h2>
@@ -556,7 +564,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#05070A] pt-24 pb-12 border-t border-white/10 text-white relative z-10 reveal-element">
+    <footer class="bg-[#05070A] pt-24 pb-12 text-white relative z-10 reveal-element">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
         <div class="container mx-auto px-6">
             <!-- Top CTA -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-16 gap-8">
@@ -671,5 +680,14 @@
 
     <!-- Custom Script -->
     <script src="js/main.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./vendor/three/build/three.module.js",
+            "three/addons/": "./vendor/three/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/globe.js"></script>
 </body>
 </html>
