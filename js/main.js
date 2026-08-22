@@ -162,10 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 500 + (index * 300));
                 });
 
-                // Scale up nodes
+                // Scale up nodes (Tailwind v4: la propiedad `scale` se anima aparte)
                 mapNodes.forEach((node, index) => {
                     setTimeout(() => {
-                        node.style.transform = 'translate(-50%, -50%) scale(1)';
+                        node.style.scale = '1';
                     }, 200 + (index * 200));
                 });
 
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.3 });
         mapObserver.observe(mapSection);
     } else {
-        mapNodes.forEach(node => node.style.transform = 'translate(-50%, -50%) scale(1)');
+        mapNodes.forEach(node => { node.style.scale = '1'; });
         mapRoutes.forEach(route => {
             route.style.opacity = '1';
             route.style.strokeDasharray = '2 2';
