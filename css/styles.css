@@ -146,6 +146,12 @@
     color: rgba(255, 110, 160, .5);
 }
 
+/* ---------- mapa: rutas activas con glow dorado ---------- */
+.map-route {
+    filter: drop-shadow(0 0 1px rgba(212, 175, 55, 0.4));
+    transition: stroke 0.5s ease, opacity 0.7s ease;
+}
+
 /* ---------- mapa: ripples ambientales flotantes ---------- */
 .map-ambient {
     position: absolute;

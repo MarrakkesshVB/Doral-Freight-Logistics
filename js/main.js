@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.querySelectorAll('.travel-dot').forEach(dot => {
             dot.style.opacity = '0';
+            const anim = dot.querySelector('animateMotion');
+            if (anim && anim.endElement) { try { anim.endElement(); } catch (e) {} }
         });
 
         // Activate target
@@ -135,11 +137,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const targetRoute = document.querySelector(`.map-route[data-target="${locId}"]`);
             if (targetRoute) {
-                targetRoute.setAttribute('stroke', '#0066FF');
+                targetRoute.setAttribute('stroke', '#D4AF37');
+                // La ruta "se enciende": se redibuja en cada activación
+                const len = targetRoute.getTotalLength();
+                targetRoute.style.transition = 'none';
+                targetRoute.style.strokeDasharray = `${len} ${len}`;
+                targetRoute.style.strokeDashoffset = len;
+                targetRoute.getBoundingClientRect(); // fuerza reflow
+                targetRoute.style.transition = 'stroke-dashoffset 0.9s ease-in-out';
+                targetRoute.style.strokeDashoffset = '0';
             }
             const targetTravelDot = document.querySelector(`.travel-dot[data-target="${locId}"]`);
-            if (targetTravelDot) {
+            if (targetTravelDot && !prefersReducedMotion) {
                 targetTravelDot.style.opacity = '1';
+                const anim = targetTravelDot.querySelector('animateMotion');
+                if (anim && anim.beginElement) { try { anim.beginElement(); } catch (e) {} }
             }
         }
     };
@@ -169,13 +181,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 200 + (index * 200));
                 });
 
-                // Sequential Highlight loop
+                // Sequential Highlight loop: primer beat al asentarse los nodos, luego cada 3s
                 let currentIndex = 1; // Skip Miami initially
                 const locIds = ['mia', 'sju', 'sdq', 'sti'];
-                setInterval(() => {
+                setTimeout(() => {
                     activateMapNode(locIds[currentIndex]);
                     currentIndex = (currentIndex + 1) % locIds.length;
-                }, 3000);
+                    setInterval(() => {
+                        activateMapNode(locIds[currentIndex]);
+                        currentIndex = (currentIndex + 1) % locIds.length;
+                    }, 3000);
+                }, 1400);
             }
         }, { threshold: 0.3 });
         mapObserver.observe(mapSection);

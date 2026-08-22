@@ -246,80 +246,83 @@
                     <div class="space-y-4" id="map-locations">
                         <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="mia">
                             <div class="flex items-center gap-3">
-                                <div class="loc-dot w-2 h-2 rounded-full bg-white transition-shadow duration-300"></div>
+                                <div class="loc-dot w-2 h-2 rounded-full bg-[#D4AF37] transition-shadow duration-300"></div>
                                 <span class="font-medium text-white">Miami (HQ)</span>
                             </div>
                         </div>
                         <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sju">
                             <div class="flex items-center gap-3">
-                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <div class="loc-dot w-2 h-2 rounded-full bg-white transition-shadow duration-300"></div>
                                 <span class="font-medium text-white">San Juan, PR</span>
                             </div>
                         </div>
                         <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sdq">
                             <div class="flex items-center gap-3">
-                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <div class="loc-dot w-2 h-2 rounded-full bg-white transition-shadow duration-300"></div>
                                 <span class="font-medium text-white">Santo Domingo, DR</span>
                             </div>
                         </div>
                         <div class="map-loc-btn p-4 rounded-xl border glass hover:border-white/20 transition-all duration-300 interactive-element cursor-none" data-loc="sti">
                             <div class="flex items-center gap-3">
-                                <div class="loc-dot w-2 h-2 rounded-full bg-[#0066FF] transition-shadow duration-300"></div>
+                                <div class="loc-dot w-2 h-2 rounded-full bg-white transition-shadow duration-300"></div>
                                 <span class="font-medium text-white">Santiago, DR</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full lg:w-2/3 h-[500px] relative glass p-8 flex items-center justify-center reveal-element delay-200 border-[rgba(0,102,255,0.2)]">
-                    <div class="relative w-full max-w-[600px] aspect-video map-svg-container">
+                <div class="w-full lg:w-2/3 aspect-video relative glass overflow-hidden reveal-element delay-200 border-[rgba(0,102,255,0.2)]">
+                    <!-- Carta náutica del Caribe (pre-renderizada) -->
+                    <img src="assets/caribbean-chart.webp" alt="Caribbean network chart: Florida, Cuba, Hispaniola and Puerto Rico" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+                    <div class="absolute inset-0 bg-[#05070A]/25 pointer-events-none"></div>
+                    <div class="relative w-full h-full map-svg-container">
                         <!-- SVG Map Lines -->
                         <svg id="network-lines" class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
                             <!-- Base Routes -->
-                            <path class="map-route opacity-0 transition-all duration-700" id="path-sju" data-target="sju" d="M 30 20 Q 50 55 80 65" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
-                            <path class="map-route opacity-0 transition-all duration-700" id="path-sdq" data-target="sdq" d="M 30 20 Q 50 50 60 60" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
-                            <path class="map-route opacity-0 transition-all duration-700" id="path-sti" data-target="sti" d="M 30 20 Q 50 40 55 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sju" data-target="sju" d="M 22 43 Q 48 36 73 48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sdq" data-target="sdq" d="M 22 43 Q 42 50 59.5 58" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <path class="map-route opacity-0 transition-all duration-700" id="path-sti" data-target="sti" d="M 22 43 Q 40 44 58.5 53" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="2 2" />
                             
                             <!-- Traveling Dots (Hidden by default, shown via JS) -->
-                            <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sju" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
-                                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 30 20 Q 50 55 80 65" />
+                            <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sju" r="1.5" fill="#fff" filter="drop-shadow(0 0 3px #fff)">
+                                <animateMotion dur="2.6s" begin="indefinite" fill="freeze" path="M 22 43 Q 48 36 73 48" />
                             </circle>
                             <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sdq" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
-                                <animateMotion dur="2s" repeatCount="indefinite" path="M 30 20 Q 50 50 60 60" />
+                                <animateMotion dur="2.3s" begin="indefinite" fill="freeze" path="M 22 43 Q 42 50 59.5 58" />
                             </circle>
                             <circle class="travel-dot opacity-0 transition-opacity duration-300" data-target="sti" r="1.5" fill="#fff" filter="drop-shadow(0 0 2px #fff)">
-                                <animateMotion dur="1.8s" repeatCount="indefinite" path="M 30 20 Q 50 40 55 50" />
+                                <animateMotion dur="2s" begin="indefinite" fill="freeze" path="M 22 43 Q 40 44 58.5 53" />
                             </circle>
                         </svg>
                         
                         <!-- Nodes -->
-                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 30%; top: 20%;" data-node="mia">
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 22%; top: 43%;" data-node="mia">
                             <div class="relative interactive-element cursor-none">
-                                <div class="node-ripple absolute inset-0 rounded-full bg-white opacity-0 animate-ping"></div>
-                                <div class="relative w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white] border-2 border-[#05070A] z-10 transition-transform"></div>
+                                <div class="node-ripple absolute inset-0 rounded-full bg-[#D4AF37] opacity-0 animate-ping"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-[#D4AF37] shadow-[0_0_15px_#D4AF37] border-2 border-[#05070A] z-10 transition-transform"></div>
                             </div>
                             <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Miami (HQ)</div>
                         </div>
-                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 80%; top: 65%; transition-delay: 100ms;" data-node="sju">
+                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 72.5%; top: 50%; transition-delay: 100ms;" data-node="sju">
                             <div class="relative interactive-element cursor-none">
-                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
-                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                                <div class="node-ripple absolute inset-0 rounded-full bg-white opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white] border-2 border-[#05070A] z-10 transition-transform"></div>
                             </div>
                             <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">San Juan, PR</div>
                         </div>
-                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 60%; top: 60%; transition-delay: 200ms;" data-node="sdq">
-                            <div class="relative interactive-element cursor-none">
-                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
-                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                        <div class="map-node absolute w-0 h-0 scale-0 transition-transform duration-500 ease-out" style="left: 59.5%; top: 58%; transition-delay: 200ms;" data-node="sdq">
+                            <div class="relative interactive-element cursor-none -translate-x-1/2 -translate-y-1/2">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-white opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white] border-2 border-[#05070A] z-10 transition-transform"></div>
                             </div>
-                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santo Domingo, DR</div>
+                            <div class="node-label absolute top-full left-1/2 -translate-x-1/2 mt-4 text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santo Domingo, DR</div>
                         </div>
-                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col-reverse items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 55%; top: 50%; transition-delay: 300ms;" data-node="sti">
-                            <div class="relative interactive-element cursor-none">
-                                <div class="node-ripple absolute inset-0 rounded-full bg-[#0066FF] opacity-0"></div>
-                                <div class="relative w-4 h-4 rounded-full bg-[#0066FF] shadow-[0_0_15px_#0066FF] border-2 border-[#05070A] z-10 transition-transform"></div>
+                        <div class="map-node absolute w-0 h-0 scale-0 transition-transform duration-500 ease-out" style="left: 58.5%; top: 53%; transition-delay: 300ms;" data-node="sti">
+                            <div class="relative interactive-element cursor-none -translate-x-1/2 -translate-y-1/2">
+                                <div class="node-ripple absolute inset-0 rounded-full bg-white opacity-0"></div>
+                                <div class="relative w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white] border-2 border-[#05070A] z-10 transition-transform"></div>
                             </div>
-                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santiago, DR</div>
+                            <div class="node-label absolute bottom-full left-1/2 -translate-x-1/2 mb-4 text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Santiago, DR</div>
                         </div>
                     </div>
                 </div>
