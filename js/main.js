@@ -391,8 +391,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const vol = (l * w * h) / 166;
         const chargeableWeight = Math.max(weight, vol);
         const baseRate = inputDest.value === 'PR' ? 1.5 : 2.1;
+        // Multiplicadores heurísticos del estimate (perillas ajustables)
+        const typeMultiplier = { LTL: 1, FTL: 1.8, Air: 3.5 }[typeInput.value] || 1;
 
-        estimatedCost = Math.floor(chargeableWeight * baseRate) + 350;
+        estimatedCost = Math.floor(chargeableWeight * baseRate * typeMultiplier) + 350;
         hiddenEstCost.value = estimatedCost;
 
         // Review (step 3)
