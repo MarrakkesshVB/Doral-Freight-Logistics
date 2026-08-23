@@ -400,8 +400,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('review-route').textContent = `MIA → ${inputDest.value}`;
         document.getElementById('review-service').textContent = typeInput.value;
         document.getElementById('review-weight').textContent = `${Math.round(chargeableWeight).toLocaleString()} lbs`;
-        const firstName = (form.querySelector('[name="First Name"]').value || '').trim();
-        const lastName = (form.querySelector('[name="Last Name"]').value || '').trim();
+        const firstName = (form.querySelector('[name="contact_first_name"]').value || '').trim();
+        const lastName = (form.querySelector('[name="contact_last_name"]').value || '').trim();
         document.getElementById('review-contact').textContent = `${firstName} ${lastName}` || '---';
 
         animateValue(0, estimatedCost, 1200);
@@ -446,6 +446,25 @@ document.addEventListener('DOMContentLoaded', () => {
         liveCostEl.textContent = "0";
         updateLiveEstimateText();
         goToStep(1);
+    });
+
+    // --- FAQ Accordion (one open at a time) ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+        const toggle = item.querySelector('.faq-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => {
+            const wasOpen = item.classList.contains('open');
+            faqItems.forEach((other) => {
+                other.classList.remove('open');
+                const btn = other.querySelector('.faq-toggle');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+            if (!wasOpen) {
+                item.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        });
     });
 
     // --- Floating Contact ---

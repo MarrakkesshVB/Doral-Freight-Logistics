@@ -303,6 +303,35 @@
     box-shadow: 0 0 8px rgba(0, 102, 255, 1), 0 0 24px rgba(0, 102, 255, 0.6);
 }
 
+/* ---------- FAQ: acordeón editorial con hairlines ---------- */
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.open .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
+}
+
+.faq-icon {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* plus → × al abrir */
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* dorado = item activo (semántica del mapa) */
+.faq-item.open .faq-num {
+    color: #D4AF37;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     ::before,

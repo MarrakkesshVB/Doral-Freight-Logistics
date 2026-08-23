@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doral Freight Logistics</title>
+    <title>Doral Freight Logistics — Miami to Caribbean Ocean Freight, NVOCC & Customs Brokerage</title>
     <link rel="icon" type="image/webp" href="assets/logo.webp" />
-    <meta name="description" content="26 years of logistics excellence. Ocean Freight, NVOCC, and specialized Caribbean delivery." />
+    <link rel="canonical" href="https://doralfreight.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Doral Freight Logistics — Miami to Caribbean Ocean Freight, NVOCC & Customs Brokerage" />
+    <meta property="og:description" content="Licensed NVOCC since 1999. Ocean freight, drayage, customs brokerage and warehousing from Miami to Puerto Rico and the Dominican Republic." />
+    <meta property="og:url" content="https://doralfreight.com/" />
+    <meta name="description" content="Licensed NVOCC since 1999. Ocean freight consolidation, drayage, customs brokerage and warehousing from Miami to Puerto Rico and the Dominican Republic. Official quote within 2 business hours." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +18,151 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Lucide Icons -->
     <script src="js/lucide.min.js"></script>
+    <!-- LocalBusiness + DeliveryService Schema (AEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://doralfreight.com/#business",
+                "name": "Doral Freight Logistics, Inc.",
+                "description": "Diversified transportation company established in 1999. Licensed NVOCC and one-stop shop for all transportation and logistical needs between Miami and the Caribbean.",
+                "url": "https://doralfreight.com/",
+                "telephone": "+1-305-477-1022",
+                "email": "customerservice@doralfreight.com",
+                "foundingDate": "1999",
+                "knowsLanguage": ["en", "es"],
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "11450 NW 34th Street, Suite 100",
+                    "addressLocality": "Doral",
+                    "addressRegion": "FL",
+                    "postalCode": "33178",
+                    "addressCountry": "US"
+                },
+                "areaServed": [
+                    { "@type": "Place", "name": "Puerto Rico" },
+                    { "@type": "Country", "name": "Dominican Republic" }
+                ],
+                "department": [
+                    {
+                        "@type": "LocalBusiness",
+                        "name": "Doral Freight Logistics — Puerto Rico",
+                        "telephone": "+1-787-775-1512",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Calle A, Lote 2, Amelia Ind. Park",
+                            "addressLocality": "Guaynabo",
+                            "addressRegion": "PR",
+                            "postalCode": "00968",
+                            "addressCountry": "PR"
+                        }
+                    },
+                    {
+                        "@type": "LocalBusiness",
+                        "name": "Doral Freight Logistics — Santo Domingo",
+                        "telephone": "+1-809-688-4243"
+                    },
+                    {
+                        "@type": "LocalBusiness",
+                        "name": "Doral Freight Logistics — Santiago",
+                        "telephone": "+1-809-688-4243"
+                    }
+                ]
+            },
+            {
+                "@type": "DeliveryService",
+                "@id": "https://doralfreight.com/#service",
+                "name": "Miami to Caribbean Ocean Freight & Logistics",
+                "provider": { "@id": "https://doralfreight.com/#business" },
+                "serviceType": [
+                    "Licensed NVOCC",
+                    "Ocean Freight Consolidation/De-Consolidation Services",
+                    "LTL/FTL Container Loads",
+                    "Drayage Service",
+                    "Pickup & Delivery Service",
+                    "Distribution, Segregation, & Delivery",
+                    "In-Bond Space (Puerto Rico only)",
+                    "Customs Freight Broker",
+                    "Documentation",
+                    "Agency Services",
+                    "Hazardous Goods Handling",
+                    "Over-Dimensional Freight Shipping",
+                    "Freight Broker",
+                    "Bilingual Personnel"
+                ],
+                "areaServed": [
+                    { "@type": "Place", "name": "Miami, Florida" },
+                    { "@type": "Place", "name": "Puerto Rico" },
+                    { "@type": "Country", "name": "Dominican Republic" }
+                ],
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://doralfreight.com/#quote",
+                    "servicePhone": "+1-305-477-1022"
+                }
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage Schema (AEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which routes do you specialize in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We specialize in cargo between Miami and the Caribbean — with a focus on Puerto Rico and the Dominican Republic — supported by our own offices in Doral (HQ), Guaynabo, Santo Domingo and Santiago."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does \"Licensed NVOCC\" mean?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It means we are licensed to consolidate and ship ocean cargo under our own responsibility — a one-stop shop for your ocean freight without needing to deal with multiple carriers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is my cargo protected at your warehouse?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our warehouse is located in a secure industrial park and is equipped with a 24/7 surveillance camera system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you handle customs clearance and documentation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. As a customs freight broker we manage clearance, documentation and agency services so your cargo keeps moving through ports of entry."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of cargo can you handle?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "From LTL/FTL container loads and drayage to hazardous goods and over-dimensional freight, with pickup & delivery on both ends of the route."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the In-Bond Space (Puerto Rico only)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It is bonded storage available exclusively for our Puerto Rico operations, where cargo remains under customs control until released or forwarded."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-[#05070A] min-h-screen text-white font-sans selection:bg-[#0066FF] selection:text-white relative overflow-x-hidden">
     <!-- Background accents -->
@@ -41,6 +191,7 @@
                 <a href="#map" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">Network</a>
                 <a href="#quote" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">Estimate</a>
                 <a href="#timeline" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">About</a>
+                <a href="#faq" class="interactive-element hidden lg:inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">FAQ</a>
             </div>
             <a href="tel:+13054771022" class="interactive-element hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none lg:justify-self-end">
                 <i data-lucide="phone" class="w-4 h-4"></i>
@@ -48,6 +199,8 @@
             </a>
         </div>
     </nav>
+
+    <main>
 
     <!-- Hero Section -->
     <section id="hero" class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
@@ -308,20 +461,20 @@
                         <input type="hidden" name="subject" value="New Quote Request — Doral Freight Logistics">
                         <input type="hidden" name="from_name" value="Doral Freight — Web">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        <input type="hidden" name="Estimated Cost" id="hidden-est-cost" value="">
+                        <input type="hidden" name="estimated_cost_usd" id="hidden-est-cost" value="">
 
                         <!-- Step 1 -->
                         <div id="step-1" class="absolute w-full transition-all duration-500 opacity-100 space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Origin</label>
-                                    <select disabled class="input-field appearance-none cursor-none opacity-50" name="Origin">
+                                    <select disabled class="input-field appearance-none cursor-none opacity-50" name="origin_city">
                                         <option>Miami, FL (HQ)</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Destination</label>
-                                    <select required id="calc-dest" name="Destination" class="interactive-element input-field cursor-none">
+                                    <select required id="calc-dest" name="destination_city" class="interactive-element input-field cursor-none">
                                         <option value="" disabled selected>Select route...</option>
                                         <option value="PR">San Juan, Puerto Rico</option>
                                         <option value="SDQ">Santo Domingo, DR</option>
@@ -332,7 +485,7 @@
                             <div>
                                 <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Freight Type</label>
                                 <div class="grid grid-cols-3 gap-4" id="freight-type-selector">
-                                    <input type="hidden" name="Freight Type" id="calc-type-input" value="LTL">
+                                    <input type="hidden" name="cargo_type" id="calc-type-input" value="LTL">
                                     <button type="button" data-type="LTL" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none border-[#0066FF] bg-[#0066FF]/20 text-[#0066FF]">LTL</button>
                                     <button type="button" data-type="FTL" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none glass text-white/70 hover:border-white/20">FTL</button>
                                     <button type="button" data-type="Air" class="type-btn interactive-element py-3 px-4 rounded-xl border text-sm font-semibold transition-all cursor-none glass text-white/70 hover:border-white/20">Air</button>
@@ -347,32 +500,32 @@
                         <div id="step-2" class="absolute w-full transition-all duration-500 opacity-0 pointer-events-none space-y-6">
                             <div>
                                 <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Total Weight (lbs)</label>
-                                <input type="number" id="calc-weight" name="Weight (lbs)" required class="interactive-element input-field cursor-none" placeholder="e.g. 500">
+                                <input type="number" id="calc-weight" name="weight_lbs" required class="interactive-element input-field cursor-none" placeholder="e.g. 500">
                             </div>
                             <div>
                                 <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Dimensions (inches)</label>
                                 <div class="grid grid-cols-3 gap-4">
-                                    <input type="number" id="calc-l" name="Length" required placeholder="L" class="interactive-element input-field cursor-none text-center">
-                                    <input type="number" id="calc-w" name="Width" required placeholder="W" class="interactive-element input-field cursor-none text-center">
-                                    <input type="number" id="calc-h" name="Height" required placeholder="H" class="interactive-element input-field cursor-none text-center">
+                                    <input type="number" id="calc-l" name="length_in" required placeholder="L" class="interactive-element input-field cursor-none text-center">
+                                    <input type="number" id="calc-w" name="width_in" required placeholder="W" class="interactive-element input-field cursor-none text-center">
+                                    <input type="number" id="calc-h" name="height_in" required placeholder="H" class="interactive-element input-field cursor-none text-center">
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">First Name</label>
-                                    <input type="text" name="First Name" required class="interactive-element input-field cursor-none" />
+                                    <input type="text" name="contact_first_name" required class="interactive-element input-field cursor-none" />
                                 </div>
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Last Name</label>
-                                    <input type="text" name="Last Name" required class="interactive-element input-field cursor-none" />
+                                    <input type="text" name="contact_last_name" required class="interactive-element input-field cursor-none" />
                                 </div>
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Phone / WhatsApp</label>
-                                    <input type="tel" name="Phone" required class="interactive-element input-field cursor-none" />
+                                    <input type="tel" name="contact_phone" required class="interactive-element input-field cursor-none" />
                                 </div>
                                 <div>
                                     <label class="block text-[10px] uppercase opacity-40 font-bold mb-2">Email</label>
-                                    <input type="email" name="Email" required class="interactive-element input-field cursor-none" />
+                                    <input type="email" name="contact_email" required class="interactive-element input-field cursor-none" />
                                 </div>
                             </div>
                             <div class="flex gap-4 pt-4">
@@ -481,7 +634,7 @@
                         <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
                         <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
                             <div class="text-[#0066FF] font-bold text-xl mb-2">1999</div>
-                            <h4 class="text-2xl font-bold text-white mb-3">Foundation</h4>
+                            <h3 class="text-2xl font-bold text-white mb-3">Foundation</h3>
                             <p class="text-white/60 font-light leading-relaxed">Established in Miami, FL to bridge the logistics gap to the Caribbean.</p>
                         </div>
                     </div>
@@ -489,7 +642,7 @@
                         <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
                         <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pl-16 text-left">
                             <div class="text-[#0066FF] font-bold text-xl mb-2">2005</div>
-                            <h4 class="text-2xl font-bold text-white mb-3">NVOCC Licensed</h4>
+                            <h3 class="text-2xl font-bold text-white mb-3">NVOCC Licensed</h3>
                             <p class="text-white/60 font-light leading-relaxed">Obtained official NVOCC licensing, expanding our ocean freight capabilities globally.</p>
                         </div>
                     </div>
@@ -497,7 +650,7 @@
                         <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
                         <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
                             <div class="text-[#0066FF] font-bold text-xl mb-2">2012</div>
-                            <h4 class="text-2xl font-bold text-white mb-3">Puerto Rico Hub</h4>
+                            <h3 class="text-2xl font-bold text-white mb-3">Puerto Rico Hub</h3>
                             <p class="text-white/60 font-light leading-relaxed">Opened our dedicated consolidation facility in San Juan.</p>
                         </div>
                     </div>
@@ -505,7 +658,7 @@
                         <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
                         <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pl-16 text-left">
                             <div class="text-[#0066FF] font-bold text-xl mb-2">2018</div>
-                            <h4 class="text-2xl font-bold text-white mb-3">DR Expansion</h4>
+                            <h3 class="text-2xl font-bold text-white mb-3">DR Expansion</h3>
                             <p class="text-white/60 font-light leading-relaxed">Launched dual operations in Santo Domingo and Santiago.</p>
                         </div>
                     </div>
@@ -513,7 +666,7 @@
                         <div class="timeline-node absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full bg-[#05070A] border-2 border-white/20 transition-all duration-300 -translate-x-1/2 mt-1.5 md:mt-0"></div>
                         <div class="ml-16 md:ml-0 w-full md:w-1/2 md:pr-16 text-left md:text-right">
                             <div class="text-[#0066FF] font-bold text-xl mb-2">2024</div>
-                            <h4 class="text-2xl font-bold text-white mb-3">Tech Integration</h4>
+                            <h3 class="text-2xl font-bold text-white mb-3">Tech Integration</h3>
                             <p class="text-white/60 font-light leading-relaxed">Implemented next-gen tracking and automated warehouse management systems.</p>
                         </div>
                     </div>
@@ -521,6 +674,136 @@
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-32 bg-transparent relative z-10">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Intro -->
+                <div class="w-full lg:w-1/3 reveal-element">
+                    <div class="text-[#0066FF] font-semibold uppercase tracking-wider mb-4">Knowledge Base</div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Frequently Asked Questions.</h2>
+                    <p class="text-gray-400 text-lg font-light leading-relaxed mb-8">Straight answers about our routes, licensing and cargo handling — no fine print.</p>
+                    <a href="mailto:customerservice@doralfreight.com" class="interactive-element inline-flex items-center gap-2 text-[#0066FF] font-medium hover:underline cursor-none">
+                        Still have questions? Talk to our team
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Accordion -->
+                <div class="w-full lg:w-2/3 reveal-element delay-100">
+                    <div class="glass divide-y divide-white/10">
+
+                        <div class="faq-item open">
+                            <h3>
+                                <button type="button" id="faq-trigger-1" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="true" aria-controls="faq-panel-1">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">01</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">Which routes do you specialize in?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">We specialize in cargo between Miami and the Caribbean — with a focus on Puerto Rico and the Dominican Republic — supported by our own offices in Doral (HQ), Guaynabo, Santo Domingo and Santiago.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>
+                                <button type="button" id="faq-trigger-2" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="false" aria-controls="faq-panel-2">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">02</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">What does "Licensed NVOCC" mean?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">It means we are licensed to consolidate and ship ocean cargo under our own responsibility — a one-stop shop for your ocean freight without needing to deal with multiple carriers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>
+                                <button type="button" id="faq-trigger-3" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="false" aria-controls="faq-panel-3">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">03</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">How is my cargo protected at your warehouse?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">Our warehouse is located in a secure industrial park and is equipped with a 24/7 surveillance camera system.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>
+                                <button type="button" id="faq-trigger-4" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="false" aria-controls="faq-panel-4">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">04</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">Do you handle customs clearance and documentation?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">Yes. As a customs freight broker we manage clearance, documentation and agency services so your cargo keeps moving through ports of entry.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>
+                                <button type="button" id="faq-trigger-5" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="false" aria-controls="faq-panel-5">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">05</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">What types of cargo can you handle?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">From LTL/FTL container loads and drayage to hazardous goods and over-dimensional freight, with pickup &amp; delivery on both ends of the route.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>
+                                <button type="button" id="faq-trigger-6" class="faq-toggle interactive-element w-full flex items-center justify-between gap-6 px-6 pt-6 pb-5 md:px-7 md:pt-7 md:pb-5 text-left cursor-none" aria-expanded="false" aria-controls="faq-panel-6">
+                                    <span class="flex items-baseline gap-4 min-w-0">
+                                        <span class="faq-num font-mono text-[10px] tracking-widest text-[#0066FF] transition-colors duration-300">06</span>
+                                        <span class="text-base md:text-lg font-semibold text-white">What is the In-Bond Space (Puerto Rico only)?</span>
+                                    </span>
+                                    <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-[#0066FF]"></i>
+                                </button>
+                            </h3>
+                            <div id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="pl-14 pr-6 pb-6 md:pr-7 md:pb-7 text-sm md:text-base text-white/60 font-light leading-relaxed">It is bonded storage available exclusively for our Puerto Rico operations, where cargo remains under customs control until released or forwarded.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-[#05070A] pt-24 pb-12 text-white relative z-10 reveal-element">
@@ -541,7 +824,7 @@
             <!-- Locations Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div>
-                    <h4 class="text-xl font-bold mb-1">Miami</h4>
+                    <h3 class="text-xl font-bold mb-1">Miami</h3>
                     <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">Global Headquarters</p>
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
@@ -555,7 +838,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-1">San Juan</h4>
+                    <h3 class="text-xl font-bold mb-1">San Juan</h3>
                     <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">PR Consolidation Hub</p>
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
@@ -569,7 +852,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-1">Santo Domingo</h4>
+                    <h3 class="text-xl font-bold mb-1">Santo Domingo</h3>
                     <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">DR Operations</p>
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
@@ -583,7 +866,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-1">Santiago</h4>
+                    <h3 class="text-xl font-bold mb-1">Santiago</h3>
                     <p class="text-[#0066FF] text-sm font-medium mb-6 uppercase tracking-wider">Northern DR Hub</p>
                     <ul class="space-y-4 text-gray-400 font-light">
                         <li class="flex items-start gap-3">
@@ -614,7 +897,7 @@
     <div id="floating-contact-container" class="fixed bottom-6 right-6 z-[90] transition-all duration-500 translate-y-20 opacity-0 pointer-events-none">
         <div id="floating-chat-box" class="absolute bottom-20 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 opacity-0 translate-y-4 pointer-events-none scale-95 origin-bottom-right">
             <div class="bg-[#25D366] p-4 text-white">
-                <h4 class="font-bold">Chat with Support</h4>
+                <p class="font-bold">Chat with Support</p>
                 <p class="text-sm text-green-100 font-light">Typically replies in minutes</p>
             </div>
             <div class="p-6 bg-gray-50 flex flex-col gap-3">
