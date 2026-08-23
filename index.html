@@ -211,9 +211,9 @@
                 <a href="#timeline" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">About</a>
                 <a href="#faq" class="interactive-element hidden lg:inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">FAQ</a>
             </div>
-            <a href="tel:+13054771022" class="interactive-element hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none lg:justify-self-end">
+            <a href="tel:+13054771022" class="interactive-element flex items-center gap-2 px-3 sm:px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none lg:justify-self-end" aria-label="Call Doral Freight Logistics">
                 <i data-lucide="phone" class="w-4 h-4"></i>
-                (305) 477-1022
+                <span class="hidden sm:inline">(305) 477-1022</span>
             </a>
         </div>
     </nav>
@@ -915,21 +915,21 @@
     <!-- Floating Contact -->
     <div id="floating-contact-container" class="fixed bottom-6 right-6 z-[90] transition-all duration-500 translate-y-20 opacity-0 pointer-events-none">
         <div id="floating-chat-box" class="absolute bottom-20 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 opacity-0 translate-y-4 pointer-events-none scale-95 origin-bottom-right">
-            <div class="bg-[#25D366] p-4 text-white">
-                <p class="font-bold">Chat with Support</p>
-                <p class="text-sm text-green-100 font-light">Typically replies in minutes</p>
+            <div class="bg-[#0066FF] p-4 text-white">
+                <p class="font-bold">Talk to Support</p>
+                <p class="text-sm text-blue-100 font-light">Direct line to our Miami HQ</p>
             </div>
             <div class="p-6 bg-gray-50 flex flex-col gap-3">
                 <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm text-sm text-gray-700 border border-gray-100 w-[85%]">
                     Hello! How can we help you with your freight today?
                 </div>
-                <a href="https://wa.me/13054771022" target="_blank" rel="noopener noreferrer" class="interactive-element mt-4 flex items-center justify-center gap-2 bg-[#25D366] text-white font-medium py-3 rounded-xl hover:bg-[#20b858] transition-colors shadow-lg shadow-green-500/30 cursor-none">
-                    Open WhatsApp
+                <a href="tel:+13054771022" class="interactive-element mt-4 flex items-center justify-center gap-2 bg-[#0066FF] text-white font-medium py-3 rounded-xl hover:bg-[#0052CC] transition-colors shadow-lg shadow-blue-500/30 cursor-none">
+                    Call (305) 477-1022
                 </a>
             </div>
         </div>
         <button id="floating-toggle-btn" class="interactive-element w-16 h-16 bg-[#05070A] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform border border-white/10 cursor-none">
-            <i data-lucide="message-circle" id="floating-icon-chat" class="w-7 h-7 absolute transition-opacity duration-300 opacity-100"></i>
+            <i data-lucide="phone" id="floating-icon-chat" class="w-7 h-7 absolute transition-opacity duration-300 opacity-100"></i>
             <i data-lucide="x" id="floating-icon-close" class="w-7 h-7 absolute transition-opacity duration-300 opacity-0"></i>
         </button>
     </div>
