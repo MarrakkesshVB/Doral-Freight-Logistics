@@ -8,6 +8,9 @@ import { GPUComputationRenderer } from 'three/addons/misc/GPUComputationRenderer
 const canvas = document.getElementById('hero-globe');
 if (canvas) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const coarse = window.matchMedia('(pointer: coarse)').matches;
+    const lowMem = (navigator.deviceMemory || 8) <= 4;
+    const LOW_GPU = coarse || lowMem; // gama media móvil: sin bloom + dpr acotado
 
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setClearColor(0x05070a, 0); 
@@ -220,29 +223,33 @@ if (canvas) {
     group.add(shell);
 
     // ---------- Post-procesado: BLOOM CINEMATOGRÁFICO ----------
-    const composer = new EffectComposer(renderer);
-    const renderPass = new RenderPass(scene, camera);
+    let composer = null;
+    let bloom = null;
+    if (!LOW_GPU) {
+        composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
     renderPass.clearColor = new THREE.Color(0x000000);
     renderPass.clearAlpha = 0;
     composer.addPass(renderPass);
     
-    const bloom = new UnrealBloomPass(
+        bloom = new UnrealBloomPass(
         new THREE.Vector2(window.innerWidth, window.innerHeight), 
         2.2,  
         0.5,  
         0.1   
     );
-    composer.addPass(bloom);
+        composer.addPass(bloom);
+    }
 
     // ---------- Resize ----------
     const resize = () => {
         const rect = canvas.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, LOW_GPU ? 1.5 : 2);
         renderer.setPixelRatio(dpr);
         renderer.setSize(rect.width, rect.height, false);
-        composer.setSize(rect.width, rect.height);
+        if (composer) composer.setSize(rect.width, rect.height);
         
-        bloom.resolution.set(rect.width, rect.height);
+        if (bloom) bloom.resolution.set(rect.width, rect.height);
         
         camera.aspect = rect.width / rect.height;
         camera.updateProjectionMatrix();
@@ -287,9 +294,24 @@ if (canvas) {
             clustersU.value[k].copy(toVec(h.lat + Math.sin(ts * 0.2 + h.ph) * 20, h.lon + ts * h.dlon));
         });
         
-        composer.render();
+        if (composer) composer.render();
+        else renderer.render(scene, camera);
     };
 
-    if (reduced) tick(1200);
-    else renderer.setAnimationLoop(tick);
+    if (reduced) {
+        tick(1200);
+    } else {
+        // Pausa el loop si el hero sale de pantalla o la pestaña se oculta (libera GPU en gama media)
+        const heroSection = document.getElementById('hero');
+        let heroVisible = true;
+        const syncLoop = () => {
+            renderer.setAnimationLoop(heroVisible && !document.hidden ? tick : null);
+        };
+        new IntersectionObserver((entries) => {
+            heroVisible = entries[0].isIntersecting;
+            syncLoop();
+        }, { threshold: 0 }).observe(heroSection);
+        document.addEventListener('visibilitychange', syncLoop);
+        syncLoop();
+    }
 }

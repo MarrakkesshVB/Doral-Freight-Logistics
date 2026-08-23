@@ -337,6 +337,52 @@ html, body {
     color: #D4AF37;
 }
 
+/* ---------- Perf mobile: liberar GPU en gama media ---------- */
+@media (pointer: coarse) {
+    /* backdrop-filter es de lo más caro en GPUs móviles */
+    .glass,
+    .glass-panel,
+    .glass-panel-light,
+    .beam-card,
+    nav {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    /* Sin blur, compensamos con fondo más opaco (el look dark se mantiene) */
+    .glass,
+    .glass-panel,
+    .glass-panel-light,
+    .beam-card {
+        background: rgba(8, 12, 18, 0.82);
+    }
+
+    nav {
+        background: rgba(5, 7, 10, 0.92);
+    }
+
+    /* Beam estático: borde con gradiente fijo, sin rasterizar conic por frame */
+    .beam-card::before {
+        animation: none;
+        background: linear-gradient(160deg, rgba(0, 102, 255, 0.4), rgba(212, 175, 55, 0.25));
+    }
+
+    /* Glow interno con blur(28px): fuera en táctil */
+    .beam-card::after {
+        display: none;
+    }
+
+    /* Ripples ambientales: fuera en táctil (ya estaban fuera en reduced-motion) */
+    .map-ambient {
+        display: none;
+    }
+
+    /* Reveals más snappy en mobile */
+    .reveal-element {
+        transition-duration: 0.5s;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
