@@ -390,7 +390,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const vol = (l * w * h) / 166;
         const chargeableWeight = Math.max(weight, vol);
-        const baseRate = inputDest.value === 'PR' ? 1.5 : 2.1;
+        const rateByDest = { 'San Juan, PR': 1.5, 'Santo Domingo, DR': 2.1, 'Santiago, DR': 2.1 };
+        const baseRate = rateByDest[inputDest.value] || 2.1;
         // Multiplicadores heurísticos del estimate (perillas ajustables)
         const typeMultiplier = { LTL: 1, FTL: 1.8, Air: 3.5 }[typeInput.value] || 1;
 
