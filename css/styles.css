@@ -1,4 +1,9 @@
 /* css/styles.css */
+/* Clip horizontal en root: los glows decorativos viven off-canvas por diseño */
+html, body {
+    overflow-x: clip;
+}
+
 /* Hide default cursor for the custom cursor effect on non-touch devices */
 @media (pointer: fine) {
     body {
