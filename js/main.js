@@ -213,6 +213,22 @@ document.addEventListener('DOMContentLoaded', () => {
         node.addEventListener('mouseleave', () => activateMapNode(null));
     });
 
+    // --- Services: asistente suave de alineado (sin snap CSS) ---
+    const servicesSection = document.getElementById('services');
+    if (servicesSection && !prefersReducedMotion) {
+        const SNAP_THRESHOLD = 80; // px de cercanía para asistir (0 = apagado)
+        let snapTimer = null;
+        window.addEventListener('scroll', () => {
+            clearTimeout(snapTimer);
+            snapTimer = setTimeout(() => {
+                const rect = servicesSection.getBoundingClientRect();
+                if (Math.abs(rect.top) < SNAP_THRESHOLD && rect.height <= window.innerHeight + 1) {
+                    window.scrollTo({ top: window.scrollY + rect.top, behavior: 'smooth' });
+                }
+            }, 120);
+        }, { passive: true });
+    }
+
     // --- Timeline Scroll ---
     const timelineContainer = document.getElementById('timeline-container');
     const timelineLineFill = document.getElementById('timeline-line-fill');

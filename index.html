@@ -26,8 +26,8 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-[80] border-b border-white/5 bg-[#05070A]/70 backdrop-blur-md">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#hero" class="interactive-element flex items-center gap-3 cursor-none">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
+            <a href="#hero" class="interactive-element flex items-center gap-3 cursor-none lg:justify-self-start">
                 <div class="h-10 rounded-lg bg-white overflow-hidden flex items-center justify-center shadow-lg shadow-black/30">
                     <img src="assets/logo.webp" alt="Doral Freight Logistics logo" class="h-14 w-auto object-contain" />
                 </div>
@@ -36,13 +36,13 @@
                     <span class="text-[8px] tracking-[0.4em] text-[#0066FF] uppercase">Logistics Inc.</span>
                 </div>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <a href="#services" class="interactive-element hover:text-white transition-colors cursor-none">Services</a>
-                <a href="#map" class="interactive-element hover:text-white transition-colors cursor-none">Network</a>
-                <a href="#quote" class="interactive-element hover:text-white transition-colors cursor-none">Estimate</a>
-                <a href="#timeline" class="interactive-element hover:text-white transition-colors cursor-none">About</a>
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#services" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">Services</a>
+                <a href="#map" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">Network</a>
+                <a href="#quote" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">Estimate</a>
+                <a href="#timeline" class="interactive-element inline-flex items-center px-4 py-2 rounded-full glass-panel text-blue-300 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[#0066FF]/40 transition-colors cursor-none">About</a>
             </div>
-            <a href="tel:+13054771022" class="interactive-element hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none">
+            <a href="tel:+13054771022" class="interactive-element hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] text-white text-sm font-semibold hover:bg-[#0052CC] transition-colors cursor-none lg:justify-self-end">
                 <i data-lucide="phone" class="w-4 h-4"></i>
                 (305) 477-1022
             </a>
@@ -90,132 +90,80 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-32 bg-transparent relative z-10">
+    <section id="services" class="py-16 bg-transparent relative z-10 min-h-svh flex items-center">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#0066FF]/40 to-transparent pointer-events-none"></div>
         <div class="container mx-auto px-6">
-            <div class="max-w-3xl mb-20 reveal-element">
+            <div class="max-w-3xl mb-12 reveal-element">
                 <div class="text-[#0066FF] font-semibold uppercase tracking-wider mb-4">Core Capabilities</div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white">End-to-end logistics engineered for scale.</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=800" alt="NVOCC Licensed" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="anchor" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">NVOCC Licensed</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">Fully licensed Non-Vessel Operating Common Carrier ensuring secure and compliant ocean freight operations across global routes.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 1 -->
+                <div class="beam-card reveal-element h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Ocean Freight & NVOCC</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">Licensed NVOCC operations moving consolidated ocean cargo from Miami to the Caribbean — our core lane since 1999.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">Licensed NVOCC</span>
+                            <span class="svc-chip">Ocean Freight Consolidation/De-Consolidation Services</span>
                         </div>
                     </div>
                 </div>
-                <!-- Service 2 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-100 cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=800" alt="Ocean Freight" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="ship" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Ocean Freight</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">Reliable FCL and LCL ocean freight solutions from Miami to our specialized hubs in Puerto Rico and Dominican Republic.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 2 -->
+                <div class="beam-card reveal-element delay-100 h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Ground Transportation & Drayage</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">Flexible truckload, drayage and pickup & delivery connecting ports, warehouses and final destinations on both ends of the route.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">LTL/FTL Container Loads</span>
+                            <span class="svc-chip">Drayage Service</span>
+                            <span class="svc-chip">Pickup & Delivery Service</span>
                         </div>
                     </div>
                 </div>
-                <!-- Service 3 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-200 cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800" alt="LTL & FTL" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="truck" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">LTL & FTL</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">Flexible ground transportation. Less-than-truckload or full-truckload options optimized for speed and cost-efficiency.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 3 -->
+                <div class="beam-card reveal-element delay-200 h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Warehousing & Distribution</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">A warehouse in a secure industrial park with 24/7 surveillance, supporting segregation, distribution and in-bond storage in Puerto Rico.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">Distribution, Segregation, & Delivery</span>
+                            <span class="svc-chip">In-Bond Space (Puerto Rico only)</span>
                         </div>
                     </div>
                 </div>
-                <!-- Service 4 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1586528116493-a0282b5063c3?q=80&w=800" alt="Warehousing" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="warehouse" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Warehousing</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">State-of-the-art consolidation and deconsolidation facilities designed to handle diverse cargo types with absolute security.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 4 -->
+                <div class="beam-card reveal-element h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Customs Brokerage & Documentation</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">Customs brokerage, documentation and agency services keeping cargo moving through ports of entry without delays.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">Customs Freight Broker</span>
+                            <span class="svc-chip">Documentation</span>
+                            <span class="svc-chip">Agency Services</span>
                         </div>
                     </div>
                 </div>
-                <!-- Service 5 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-100 cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?q=80&w=800" alt="Pickup & Delivery" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="package" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Pickup & Delivery</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">Specialized door-to-door logistics in Caribbean routes, ensuring your cargo reaches its final destination seamlessly.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 5 -->
+                <div class="beam-card reveal-element delay-100 h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Specialized Cargo Handling</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">Trained handling for hazardous and over-dimensional freight that standard carriers can't take.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">Hazardous Goods Handling</span>
+                            <span class="svc-chip">Over-Dimensional Freight Shipping</span>
                         </div>
                     </div>
                 </div>
-                <!-- Service 6 -->
-                <div class="service-card group relative h-[420px] rounded-2xl overflow-hidden glass flex flex-col justify-end p-8 interactive-element border-[rgba(0,102,255,0.2)] reveal-element delay-200 cursor-none transition-transform duration-300 hover:-translate-y-2">
-                    <div class="service-bg absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800" alt="Customs Brokerage" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                    </div>
-                    <div class="service-icon absolute top-8 left-8 p-4 rounded-xl transition-colors duration-500 z-20 glass text-[#0066FF] border-white/10 group-hover:bg-white/10 group-hover:text-white">
-                        <i data-lucide="file-check" class="w-8 h-8"></i>
-                    </div>
-                    <div class="relative z-20">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors duration-500 text-white">Customs Brokerage</h3>
-                        <div class="service-desc overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
-                            <p class="text-white/70 mb-6 font-light leading-relaxed">Expert clearance services to navigate complex regulations and prevent delays at ports of entry.</p>
-                            <a href="#quote" class="flex items-center text-[#0066FF] font-semibold uppercase tracking-wider text-sm group-btn cursor-none interactive-element">
-                                Explore Solution 
-                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                <!-- Category 6 -->
+                <div class="beam-card reveal-element delay-200 h-full">
+                    <div class="relative z-10 p-8 h-full flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Freight Brokerage & Support</h3>
+                        <p class="text-sm text-white/60 font-light leading-relaxed">A bilingual team brokering freight and representing your cargo — one stop for all transportation and logistics needs.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                            <span class="svc-chip">Freight Broker</span>
+                            <span class="svc-chip">Bilingual Personnel</span>
                         </div>
                     </div>
                 </div>
@@ -296,12 +244,12 @@
                         </svg>
                         
                         <!-- Nodes -->
-                        <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 22%; top: 43%;" data-node="mia">
-                            <div class="relative interactive-element cursor-none">
+                        <div class="map-node absolute w-0 h-0 scale-0 transition-transform duration-500 ease-out" style="left: 22%; top: 43%;" data-node="mia">
+                            <div class="relative interactive-element cursor-none -translate-x-1/2 -translate-y-1/2">
                                 <div class="node-ripple absolute inset-0 rounded-full bg-[#D4AF37] opacity-0 animate-ping"></div>
                                 <div class="relative w-4 h-4 rounded-full bg-[#D4AF37] shadow-[0_0_15px_#D4AF37] border-2 border-[#05070A] z-10 transition-transform"></div>
                             </div>
-                            <div class="node-label text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Miami (HQ)</div>
+                            <div class="node-label absolute bottom-full left-1/2 -translate-x-1/2 mb-4 text-xs font-medium whitespace-nowrap px-2 py-1 rounded bg-[#05070A]/80 border border-white/10 text-gray-400 transition-colors duration-300">Miami (HQ)</div>
                         </div>
                         <div class="map-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 scale-0 transition-transform duration-500 ease-out" style="left: 72.5%; top: 50%; transition-delay: 100ms;" data-node="sju">
                             <div class="relative interactive-element cursor-none">
@@ -651,18 +599,13 @@
             </div>
 
             <!-- Bottom Bar -->
-            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-light">
-                <div class="flex items-center gap-2 mb-4 md:mb-0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-gray-500 text-sm font-light">
+                <div class="flex items-center gap-2 justify-center md:justify-start">
                     <div class="w-2 h-2 rounded-full bg-green-500"></div>
                     <span>Systems Operational</span>
                 </div>
-                <a href="mailto:customerservice@doralfreight.com" class="interactive-element hover:text-white transition-colors cursor-none mb-4 md:mb-0">customerservice@doralfreight.com</a>
-                <div class="flex gap-6">
-                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Privacy Policy</a>
-                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Terms of Service</a>
-                    <a href="#" class="interactive-element hover:text-white transition-colors cursor-none">Licensing</a>
-                </div>
-                <p class="mt-4 md:mt-0">© <span id="current-year">2026</span> Doral Freight Logistics. All rights reserved.</p>
+                <a href="mailto:customerservice@doralfreight.com" class="interactive-element hover:text-white transition-colors cursor-none text-center">customerservice@doralfreight.com</a>
+                <p class="text-center md:text-right">© <span id="current-year">2026</span> Doral Freight Logistics. All rights reserved.</p>
             </div>
         </div>
     </footer>

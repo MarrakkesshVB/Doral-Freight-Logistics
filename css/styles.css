@@ -1,5 +1,4 @@
 /* css/styles.css */
-
 /* Hide default cursor for the custom cursor effect on non-touch devices */
 @media (pointer: fine) {
     body {
@@ -202,6 +201,100 @@
     }
     .globe-snippet {
         display: none;
+    }
+}
+
+/* ---------- services: border beam cards ---------- */
+@property --beam-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.beam-card {
+    position: relative;
+    border-radius: 1.25rem;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 55%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.beam-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Haz de luz que viaja por el borde */
+.beam-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from var(--beam-angle),
+        transparent 0deg,
+        transparent 210deg,
+        rgba(0, 102, 255, 0.6) 260deg,
+        rgba(158, 199, 255, 0.9) 300deg,
+        rgba(212, 175, 55, 0.9) 330deg,
+        transparent 360deg);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: beam-rotate 7s linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    pointer-events: none;
+}
+
+/* Glow suave que el haz proyecta hacia adentro */
+.beam-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(from var(--beam-angle),
+        transparent 0deg,
+        transparent 220deg,
+        rgba(0, 102, 255, 0.10) 270deg,
+        rgba(158, 199, 255, 0.14) 305deg,
+        rgba(212, 175, 55, 0.12) 335deg,
+        transparent 360deg);
+    filter: blur(28px);
+    animation: beam-rotate 7s linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    pointer-events: none;
+}
+
+@keyframes beam-rotate {
+    to { --beam-angle: 360deg; }
+}
+
+/* Cada tarjeta con su haz desfasado */
+#services-grid .beam-card:nth-child(2) { --beam-delay: -1.2s; }
+#services-grid .beam-card:nth-child(3) { --beam-delay: -2.4s; }
+#services-grid .beam-card:nth-child(4) { --beam-delay: -3.6s; }
+#services-grid .beam-card:nth-child(5) { --beam-delay: -4.8s; }
+#services-grid .beam-card:nth-child(6) { --beam-delay: -6s; }
+
+.svc-chip {
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 102, 255, 0.35);
+    background: rgba(0, 102, 255, 0.08);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .beam-card::before,
+    .beam-card::after {
+        animation: none;
     }
 }
 
