@@ -9,7 +9,7 @@ const canvas = document.getElementById('hero-globe');
 if (canvas) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const coarse = window.matchMedia('(pointer: coarse)').matches;
-    const lowMem = (navigator.deviceMemory || 8) <= 4;
+    const lowMem = (navigator.deviceMemory || 8) <= 2;
     const LOW_GPU = coarse || lowMem; // gama media móvil: sin bloom + dpr acotado
 
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
