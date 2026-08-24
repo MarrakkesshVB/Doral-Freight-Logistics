@@ -1,3 +1,6 @@
+# AI content usage preferences (Content Signals, contentsignals.org)
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
 # AI crawlers: permitted for indexing and answer-engine citation
 User-agent: GPTBot
 Allow: /
